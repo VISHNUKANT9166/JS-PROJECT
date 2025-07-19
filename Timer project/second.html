@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Clock</title>
+  <style>
+    body {
+      margin: 0;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 80px;
+  text-align: center;
+  background: linear-gradient(-45deg, 
+    #ff9a9e,  /* soft pink */
+    #fad0c4,  /* light peach */
+    #fbc2eb,  /* pinkish purple */
+    #a1c4fd,  /* sky blue */
+    #c2e9fb,  /* light blue */
+    #d4fc79,  /* lime yellow */
+    #96e6a1,  /* mint green */
+    #f6d365   /* warm orange */
+  );
+  background-size: 800% 800%;
+  animation: gradientBG 15s ease infinite;
+}
+
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="date"></div>
+    <div id="time"></div>
+  </div>
+
+  <script src="second.js"></script>
+</body>
+</html>
