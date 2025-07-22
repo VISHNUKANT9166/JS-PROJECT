@@ -1,0 +1,226 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, 
+    #f4f4f9, 
+    #d0e8ff, 
+    #e0d4fc, 
+    #ffd6d6, 
+    #c1f0c1, 
+    #fff3b0, 
+    #ffdde1, 
+    #caf0f8);
+  background-size: 600% 600%;
+  animation: gradientBG 20s ease infinite;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* .container {
+  text-align: center;
+  background: #fff;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+h1 {
+  margin-bottom: 20px;
+  color: #48065c;
+}
+
+.quote-box {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 4px solid #007bff;
+  font-style: italic;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: bubble-float 1.5s ease-out forwards;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+@keyframes bubble-float {
+  0% {
+    transform: scale(1) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5) translateY(-150px) rotate(360deg);
+    opacity: 0;
+  }
+}
+.clock {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.datetime {
+  margin-bottom: 25px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+  display: inline-block;
+}
+
+.fancy-glow {
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.5), 0 0 10px rgba(0, 123, 255, 0.3);
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.clock {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.date {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 5px;
+  opacity: 0.9;
+}
+/* .fancy-glow {
+  font-family: 'Courier New', Courier, monospace;
+  background: linear-gradient(to right, #00e0ff, #0affd6, #2bffdd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4), 0 0 20px rgba(0, 255, 255, 0.2);
+} */
+.fancy-glow {
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  text-shadow:
+    0 0 8px #0c8d7b,
+    0 0 12px #0c8d7b,
+    0 0 16px #00ffb7,
+    0 0 20px #16d6cc;
+  transition: all 0.3s ease-in-out;
+}
+
+.clock {
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.date {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 6px;
+  opacity: 0.95;
+}
+.date {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 6px;
+  color: #ffffff;
+  text-shadow:
+    0 0 6px #ff9fe7,
+    0 0 12px #7f086b,
+    0 0 18px #cb0842;
+  opacity: 1;
+}
+
+.container {
+  text-align: center;
+  padding: 30px 50px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(0, 123, 255, 0.15),
+    0 0 60px rgba(0, 123, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.quote-box {
+  position: relative;
+  margin: 30px 0;
+  padding: 25px 35px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 5px solid #00ffff;
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.3),
+    0 0 25px rgba(0, 255, 255, 0.1);
+
+  color: #0453a3;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Quotation Marks Decoration */
+.quote-box::before,
+.quote-box::after {
+  content: '"';
+  font-size: 4rem;
+  color: #14bdbd;
+  position: absolute;
+  opacity: 0.15;
+  font-family: serif;
+}
+
+.quote-box::before {
+  top: -25px;
+  left: 20px;
+}
+
+.quote-box::after {
+  bottom: -25px;
+  right: 20px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Quote Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body >
+  <div class="container">
+  <div id="datetime" class="datetime">
+  <div id="clock" class="clock fancy-glow"></div>
+  <div id="date" class="date fancy-glow"></div>
+</div>
+
+    <div id="clock" class="clock"></div>
+    <h1>Dynamic Quote Generator</h1>
+    <div class="quote-box">
+      <p id="quote">Honesty is the Best Policy</p>
+    </div>
+  </div>
+  <script src="first.js"></script>
+</body>
+</html>
+<script>
+  document.addEventListener('click', function (e) {
+    const bubbleCount = 5;
+
+    for (let i = 0; i < bubbleCount; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+
+      // Random size
+      const size = Math.floor(Math.random() * 20) + 10;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+
+      // Random color
+      const colors = ['#007bff', '#ff4d4d', '#00d084', '#ffbb00', '#8e44ad'];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      bubble.style.background = color;
+
+      // Random starting position (slightly offset)
+      const offsetX = (Math.random() - 0.5) * 40;
+      const offsetY = (Math.random() - 0.5) * 20;
+      bubble.style.left = `${e.clientX + offsetX}px`;
+      bubble.style.top = `${e.clientY + offsetY}px`;
+
+      document.body.appendChild(bubble);
+
+      // Remove after animation
+      setTimeout(() => {
+        bubble.remove();
+      }, 1500);
+    }
+  });
+
+  function updateClock() {
+    const clock = document.getElementById('clock');
+    const now = new Date();
+    const time = now.toLocaleTimeString(); // e.g., 3:45:01 PM
+    clock.textContent = time;
+  }
+
+  // Initial call + interval
+  updateClock();
+  setInterval(updateClock, 1000);
+
+
+
+    function updateDateTime() {
+    const clock = document.getElementById('clock');
+    const dateEl = document.getElementById('date');
+    const now = new Date();
+
+    const time = now.toLocaleTimeString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
+
+    const date = now.toLocaleDateString('en-IN', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    clock.textContent = time;
+    dateEl.textContent = date;
+  }
+
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+
+
+</script>
