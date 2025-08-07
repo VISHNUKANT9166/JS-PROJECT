@@ -26,6 +26,10 @@ body {
   animation: grow 5s forwards;
   background-color: blue;
 }
+h1 {
+  color: #ffffff;
+}
+
 
 @keyframes grow {
   0% {
